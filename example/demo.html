@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../dist/polyfill.dll.js"></script>
+    <script src="../dist/gao.js"></script>
+</head>
+<body>
+    <script>
+        var str = Gao.$string.trim("abc123abc",'abc');
+        console.log(str);
+        //
+//        var sourceObj = {"a-b":12,"c d":"good","e_f":{'g--h':23}};
+//        var targetObj = {"aB":12,"cD":"good","eF":{gH:12}};
+//        var resultObj = Gao.$convertor.convert(sourceObj,function(key){
+//            return Gao.$string.camelCasify(key);
+//
+//        });
+        //
+        Gao.$db.insert().into("gao",{a:1,date:new Date().getTime()});
+//        Gao.$db.update("gao",{c:3,a:"gao"}).where(function(item){
+//            return 2 === item['b'];
+//        }).execute();
+
+//        Gao.$db.delete().from('gao').where(function(item){
+//            return item.a === 'gao';
+//        }).execute();
+        var result = Gao.$db.select().from('gao').where(function(item){
+            return item.date > 1519024149762;
+        }).execute();
+        console.log(result);
+    </script>
+</body>
+</html>
