@@ -1,4 +1,6 @@
+
 [toc]
+
 # 文档
 ## Gao.$date
 ### daybreak(date = new Date())
